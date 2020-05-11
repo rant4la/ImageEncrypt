@@ -28,15 +28,21 @@ for x in range(width - 1):
             r, g, b = pixels[x + 1, y]
 
             if(bits[round(i / pixelSpacing)] == '0'):
+                #IF ADJACENT PIXELS ARE SAME COLOR, CHANGES THE COLOR SLIGHTLY INCASE 0 BIT.
                 if(pixels[x + 1, y] == pixels[x, y]):
-                    pixels[x, y] = (max(r - 1, 0), max(g - 1, 0), max(b - 1, 0))
+                    if(pixels[x, y] == (0, 0, 0)):
+                        #FIX FOR BLACK PIXELS
+                        pixels[x, y] = (1, 1, 1)
+                    else:
+                        pixels[x, y] = (max(r - 1, 0), max(g - 1, 0), max(b - 1, 0))
             else:
                 pixels[x, y] = (r, g, b)
 
         i += 1
 
-img.save('{0}.png'.format(pixelSpacing))
+output = '{0}.png'.format(pixelSpacing)
+img.save(output)
 
-print('Done')
+print('Encrypted data to {0}'.format(output))
 
 
