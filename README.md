@@ -3,8 +3,8 @@ Python scripts for encrypting/decrypting data seamlessly into images.
 
 Usage:
 
-To encyrpt:
+- To encyrpt:
 python encrypt <image> <text>
   
-To decrypt:
+- To decrypt:
 python decrypt <image> <text>
