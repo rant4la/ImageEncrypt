@@ -7,4 +7,4 @@ Usage:
 ```python encrypt <image> <text>```
   
 - To decrypt:
-```python decrypt <image> <text>```
+```python decrypt <image>```
